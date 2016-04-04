@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="MyApp">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+        <script src="js/chess.js" type="text/javascript"></script>
+        <style>
+            table {border-collapse: collapse; }
+            td { border: 1px solid black;height:30px;width: 30px;font-size: 28px;}
+            .dark{ background: lightgray;}
+        </style>
+
+    </head>
+    <body>
+        <table ng-controller="ChessCtrl">
+            <tr>
+                <td ng-class="{'dark':$even}" ng-repeat="sq in board track by $index">
+                    {{sq| Chess}}</td>
+            </tr>
+        </table>
+
+    </body>
+</html>
